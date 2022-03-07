@@ -29,13 +29,28 @@ body{
 
 .nav{
     width: 100%;
-    height: 100px;
+    height: 70px;
     background-color: #fff;
     position: absolute;
     top: 15px;
 }
 
 /* hdk */
+.slidecontainer {
+  width: 95%;
+}
+.slider {
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
 .nav{
     
     position: fixed;
@@ -92,12 +107,13 @@ header .navbar{
 /* skjd */
 
 .container{
-    margin-top: 150px;
+  margin-top: 70px;
   width: 500px;
   background: #fff;
   text-align: center;
   border-radius: 5px;
-  padding: 50px 35px 10px 35px;
+  padding: 30px 35px 30px 35px;
+  
 }
 .container header{
   font-size: 35px;
@@ -262,4 +278,253 @@ form .page .btns button.next{
 .progress-bar .step .check.active{
   display: block;
   color: #fff;
+}
+/* media queries to make Web site responsive  */
+
+@media (max-width:1200px){
+
+  html{
+      font-size: 90%;
+  }
+
+}
+
+@media (max-width:991px){
+
+  section{
+      padding:0 3%;
+      padding-top: 7.5rem;
+      padding-bottom: 2rem;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .nav label{
+      visibility: visible;
+      opacity: 1;
+      font-size: 2rem;
+      margin: 0 20px;
+  }
+
+  .nav .navbar{
+      position: absolute;
+      top:100%; left: 0;
+      width:100%;
+      background:#fff;
+      padding:1rem 2rem;
+      border-top: .1rem solid rgba(0,0,0,.2);
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+      transform-origin: top;
+      transform: scaleY(0);
+      opacity: 0;
+      transition: .2s linear;
+  }
+
+  .nav .navbar a{
+      display: block;
+      margin:1rem 0;
+      font-size: 1rem;
+  }
+
+  .nav input:checked ~ .navbar{
+      transform: scaleY(1);
+      opacity: 1;
+  }
+
+  .nav input:checked ~ label::before{
+      content:'\f00d';
+  }
+
+  .container{
+  margin-top: 65px;
+  width: 350px;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 50px 35px 10px 35px;
+}
+.container header{
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+.container .form-outer{
+  width: 100%;
+  overflow: hidden;
+}
+.container .form-outer form{
+  display: flex;
+  width: 400%;
+}
+.form-outer form .page{
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+.form-outer form .page .title{
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+}
+.form-outer form .page .field{
+  width: 330px;
+  height: 45px;
+  margin: 45px 0;
+  left: 8px;
+  display: flex;
+  position: relative;
+}
+form .page .field .label{
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+}
+form .page .field input{
+  height: 100%;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+}
+form .page .field select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+form .page .field button{
+    
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: var(--gradient);
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  transform: scale(0.9);
+}
+form .page .field button:hover{
+  background: var(--gradient);
+    transform: scale(1.0);
+
+}
+form .page .btns button{
+  margin-top: -20px!important;
+}
+form .page .btns button.prev{
+  margin-right: 3px;
+  font-size: 17px;
+}
+form .page .btns button.next{
+  margin-left: 3px;
+}
+.container .progress-bar{
+  display: flex;
+  margin: 45px 0;
+  user-select: none;
+  
+}
+.container .progress-bar .step{
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.container .progress-bar .step p{
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 8px;
+}
+.progress-bar .step .bullet{
+  height: 25px;
+  width: 25px;
+  border: 2px solid #000;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+.progress-bar .step .bullet.active{
+  border-color: #d43f8d;
+  background: #d43f8d;
+}
+.progress-bar .step .bullet span{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.progress-bar .step .bullet.active span{
+  display: none;
+}
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after{
+  position: absolute;
+  content: '';
+  bottom: 11px;
+  right: -52px;
+  height: 3px;
+  width: 43px;
+  background: #262626;
+}
+.progress-bar .step .bullet.active:after{
+  background: #d43f8d;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear forwards;
+}
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after{
+  display: none;
+}
+.progress-bar .step p.active{
+  color: #d43f8d;
+  transition: 0.2s linear;
+}
+.progress-bar .step .check{
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.progress-bar .step .check.active{
+  display: block;
+  color: #fff;
+}
+
+}
+
+@media (max-width:450px){
+
+  html{
+      font-size: 50%;
+  }
+
+  .about .column .content .buttons a{
+      width:100%;
+      text-align: center;
+  }
+
+  .about .column .content .buttons a:last-child{
+      margin: 1rem 0;
+  }
+
 }
