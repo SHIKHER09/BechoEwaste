@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
+   
    <head>
       <meta charset="utf-8">
       <title>Sell your Products</title>
       <link rel="stylesheet" href="css1.css">
-      
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
    </head>
-   <body>
 
-      <!-- header section starts  -->
+<body>
 
-<header class="nav">
+   <!-- header section starts  -->
 
-   <img src="images/stocks.png" alt="logo">
-   <a href="#" class="logo"><span>Becho</span>  Ewaste</a>
+   <header class="nav">
 
-   <input type="checkbox" id="menu-bar">
-   <label for="menu-bar" class="fas fa-bars"></label>
+      <img src="images/stocks.png" alt="logo">
+      <a href="#" class="logo"><span>Becho</span>  Ewaste</a>
 
-   <nav class="navbar">
-       <a href="#Home">Home</a>
-       <a href="#Buy">Buy</a>
-       <a href="#About">About</a>
-       
-       <a href="#Contact">Contact</a>
-   </nav>
+      <input type="checkbox" id="menu-bar">
+      <label for="menu-bar" class="fas fa-bars"></label>
 
-</header>
+      <nav class="navbar">
+         <a href="#Home">Home</a>
+         <a href="#Buy">Buy</a>
+         <a href="#About">About</a>
+         <a href="#Contact">Contact</a>
+      </nav>
 
-      
+   </header>
 
+   <!-- header section end here -->
 
-     <!-- form section -->
+   <!-- form section -->
      
       <div class="container">
          <header>Sell your Ewaste</header>
@@ -75,8 +74,15 @@
                <div class="check fas fa-check"></div>
             </div>
          </div>
+
+
          <div class="form-outer">
             <form action="#">
+
+
+
+               <!-- first page of form -->
+
                <div class="page slide-page">
                   <div class="title">
                      E-Waste Category:
@@ -95,32 +101,26 @@
                           <option value="5">Mobile</option>
                           <option value="6">Headphones</option>
                           <option value="7">Others</option>
-                          
                         </select>
-
-                      </div>
+                     </div>
                   </div>
+
                   <div class="field">
                      <div class="label">
                         Product
                      </div>
-                     <div class="custom-select" style="width:400px;">
-                        <select>
-                          <option value="0">-</option>
-                          <option value="1">PC components</option>
-                          <option value="2">Electronics</option>
-                          <option value="3">Machine</option>
-                          <option value="4">Laptop</option>
-                          <option value="5">Mobile</option>
-                          <option value="6">Headphones</option>
-                          <option value="7">Others</option> 
-                        </select>
-                      </div>
+                     <input type="search" id="site-search" name="q"
+                        aria-label="Search through site content">
                   </div>
                   <div class="field">
                      <button class="firstNext next">Next</button>
                   </div>
                </div>
+
+
+
+               <!-- 2nd page of form -->
+
                <div class="page">
                   <div class="title">
                      Product Details:
@@ -129,14 +129,20 @@
                      <div class="label">
                         Description
                      </div>
-                     <input type="text">
+                     <textarea style="height:140px; width:350px;"></textarea>
                   </div>
+                  <div class="field"></div>
                  
                   <div class="field btns">
                      <button class="prev-1 prev">Previous</button>
                      <button class="next-1 next">Next</button>
                   </div>
                </div>
+
+
+
+               <!-- 3rd page of form -->
+
                <div class="page">
                   <div class="title">
                      Product Condition:
@@ -145,7 +151,10 @@
                      <div class="label">
                         Working %
                      </div>
-                     <input type="Number" min="1" max="100">
+                     <!-- <input type="Number" min="1" max="100"> -->
+                     <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                      </div>
                   </div>
                   <div class="field">
                      <div class="label">
@@ -158,6 +167,11 @@
                      <button class="next-2 next">Next</button>
                   </div>
                </div>
+
+
+
+               <!-- 4th page of form -->
+
                <div class="page">
                   <div class="title">
                      Products Images:
@@ -166,7 +180,6 @@
                      <div class="label">
                         Select Image File:
                      </div>
-                     
                         <input type="file" name="image">
                         <!-- <input type="submit" name="submit" value="Upload"> -->
                   </div>
@@ -174,10 +187,9 @@
                      <input type="submit" name="submit" value="Upload"> 
                   </div>
                
-                  
                   <div class="field btns">
                      <button class="prev-3 prev">Previous</button>
-                     <button class="submit">Submit</button>
+                     <button class="submit" type="submit">Submit</button>
                   </div>
                </div>
             </form>
@@ -186,7 +198,7 @@
 <!-- form section ends -->
 
 
-
-      <script src="index.js"></script>
+   <!-- scripts -->
+   <script src="index.js"></script>
    </body>
 </html>
